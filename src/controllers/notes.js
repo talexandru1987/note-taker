@@ -1,9 +1,9 @@
-const { v4: uuidv4 } = require("uuid");
+const { v4: generateUniqueId } = require("uuid");
 
 const { readFromFile, writeToFile } = require("../utils");
 
 const getNotes = (req, res) => {
-  console.log("getNotes");
+  console.log("getNotes2");
 
   //read from file
   const notes = readFromFile();
@@ -13,7 +13,7 @@ const getNotes = (req, res) => {
 
 const deleteNote = (req, res) => {
   console.log("deleteNote");
-  //get id of note from request
+  //get note id
   const { id } = req.params;
   //get all notes from file
   const notesData = readFromFile();
@@ -31,7 +31,7 @@ const createNote = (req, res) => {
   const { title, text } = req.body;
 
   //uuid
-  const id = uuidv4();
+  const id = generateUniqueId();
 
   //payload
   const note = {

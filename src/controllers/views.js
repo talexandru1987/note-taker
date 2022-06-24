@@ -5,7 +5,7 @@ const renderHomePage = (req, res) => {
   const filePath = path.join(__dirname, "../../public/index.html");
 
   //send file
-  return res.sendFile(filePath);
+  return res.sendFile("filePath");
 };
 
 const renderNotePage = (req, res) => {
