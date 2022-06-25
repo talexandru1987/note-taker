@@ -3,8 +3,6 @@ const { v4: generateUniqueId } = require("uuid");
 const { readFromFile, writeToFile } = require("../utils");
 
 const getNotes = (req, res) => {
-  console.log("getNotes2");
-
   //read from file
   const notes = readFromFile();
   //return response
@@ -12,7 +10,6 @@ const getNotes = (req, res) => {
 };
 
 const deleteNote = (req, res) => {
-  console.log("deleteNote");
   //get note id
   const { id } = req.params;
   //get all notes from file
@@ -26,7 +23,6 @@ const deleteNote = (req, res) => {
 };
 
 const createNote = (req, res) => {
-  console.log("createNote");
   // res.json("create");
   const { title, text } = req.body;
 
